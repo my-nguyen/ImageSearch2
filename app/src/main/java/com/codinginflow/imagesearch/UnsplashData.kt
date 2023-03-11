@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearchapp
+package com.codinginflow.imagesearch
 
 import java.io.Serializable
 
