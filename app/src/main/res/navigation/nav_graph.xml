@@ -6,7 +6,7 @@
     app:startDestination="@id/galleryFragment2">
     <fragment
         android:id="@+id/galleryFragment2"
-        android:name="com.codinginflow.imagesearchapp.GalleryFragment"
+        android:name="com.codinginflow.imagesearch.GalleryFragment"
         android:label="fragment_gallery"
         tools:layout="@layout/fragment_gallery" />
 </navigation>

@@ -5,8 +5,10 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.paging.LoadState
 import com.codinginflow.imagesearch.databinding.FragmentGalleryBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,14 +24,36 @@ class GalleryFragment: Fragment(R.layout.fragment_gallery) {
         val adapter = PhotosAdapter()
         binding.apply {
             recycler.setHasFixedSize(true)
+            recycler.itemAnimator = null
             recycler.adapter = adapter.withLoadStateHeaderAndFooter(
                 header = LoadAdapter { adapter.retry() },
                 footer = LoadAdapter { adapter.retry() }
             )
+            retry.setOnClickListener {
+                adapter.retry()
+            }
         }
 
         viewModel.photos.observe(viewLifecycleOwner) { paging ->
             adapter.submitData(viewLifecycleOwner.lifecycle, paging)
+        }
+
+        adapter.addLoadStateListener { loadState ->
+            binding.apply {
+                progress.isVisible = loadState.source.refresh is LoadState.Loading
+                recycler.isVisible = loadState.source.refresh is LoadState.NotLoading
+                retry.isVisible = loadState.source.refresh is LoadState.Error
+                error.isVisible = loadState.source.refresh is LoadState.Error
+
+                // empty view
+                if (loadState.source.refresh is LoadState.NotLoading &&
+                    loadState.append.endOfPaginationReached && adapter.itemCount < 1) {
+                    recycler.isVisible = false
+                    empty.isVisible = true
+                } else {
+                    empty.isVisible = false
+                }
+            }
         }
 
         setHasOptionsMenu(true)
