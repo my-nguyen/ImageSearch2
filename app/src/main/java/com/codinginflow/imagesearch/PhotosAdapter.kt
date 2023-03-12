@@ -15,8 +15,18 @@ private val COMPARATOR = object : DiffUtil.ItemCallback<UnsplashData.Result>() {
     override fun areContentsTheSame(oldItem: UnsplashData.Result, newItem: UnsplashData.Result) = oldItem == newItem
 }
 
-class PhotosAdapter: PagingDataAdapter<UnsplashData.Result, PhotosAdapter.ViewHolder>(COMPARATOR) {
+class PhotosAdapter(val listener: OnClickListener): PagingDataAdapter<UnsplashData.Result, PhotosAdapter.ViewHolder>(COMPARATOR) {
+    interface OnClickListener {
+        fun onClick(photo: UnsplashData.Result)
+    }
+
     inner class ViewHolder(val binding: ItemUnsplashPhotoBinding): RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                listener.onClick(getItem(bindingAdapterPosition)!!)
+            }
+        }
+
         fun bind(photo: UnsplashData.Result) {
             binding.apply {
                 Glide.with(itemView)

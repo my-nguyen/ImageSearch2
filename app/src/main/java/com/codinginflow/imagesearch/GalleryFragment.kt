@@ -8,6 +8,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.codinginflow.imagesearch.databinding.FragmentGalleryBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +22,13 @@ class GalleryFragment: Fragment(R.layout.fragment_gallery) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentGalleryBinding.bind(view)
-        val adapter = PhotosAdapter()
+        val adapter = PhotosAdapter(object : PhotosAdapter.OnClickListener {
+            override fun onClick(photo: UnsplashData.Result) {
+                val action = GalleryFragmentDirections.actionGalleryFragmentToDetailFragment(photo)
+                findNavController().navigate(action)
+            }
+        })
+
         binding.apply {
             recycler.setHasFixedSize(true)
             recycler.itemAnimator = null
