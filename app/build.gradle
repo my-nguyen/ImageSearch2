@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'com.codinginflow.imagesearch'
+    namespace 'com.codinginflow.imagesearch2'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.codinginflow.imagesearch"
+        applicationId "com.codinginflow.imagesearch2"
         minSdk 24
         targetSdk 33
         versionCode 1

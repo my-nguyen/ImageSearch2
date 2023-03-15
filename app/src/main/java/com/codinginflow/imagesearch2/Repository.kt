@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig

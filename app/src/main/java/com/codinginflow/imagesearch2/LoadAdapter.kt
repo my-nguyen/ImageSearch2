@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.codinginflow.imagesearch.databinding.LoadFooterBinding
+import com.codinginflow.imagesearch2.databinding.LoadFooterBinding
 
 class LoadAdapter(val callback: () -> Unit) : LoadStateAdapter<LoadAdapter.ViewHolder>() {
     inner class ViewHolder(val binding: LoadFooterBinding) : RecyclerView.ViewHolder(binding.root) {

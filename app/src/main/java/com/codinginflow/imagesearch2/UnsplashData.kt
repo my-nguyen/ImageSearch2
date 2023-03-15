@@ -1,8 +1,8 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import java.io.Serializable
 
-data class Unsplash(
+data class UnsplashData(
     val results: List<Result>,
     val total: Int,
     val total_pages: Int

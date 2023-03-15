@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
@@ -13,7 +13,7 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.codinginflow.imagesearch.databinding.FragmentDetailBinding
+import com.codinginflow.imagesearch2.databinding.FragmentDetailBinding
 
 class DetailFragment: Fragment(R.layout.fragment_detail) {
     private val args by navArgs<DetailFragmentArgs>()

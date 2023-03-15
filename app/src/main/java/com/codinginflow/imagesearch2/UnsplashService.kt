@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import retrofit2.http.GET
 import retrofit2.http.Headers

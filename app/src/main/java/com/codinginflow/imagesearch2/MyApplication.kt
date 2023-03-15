@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

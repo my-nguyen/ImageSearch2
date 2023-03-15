@@ -6,7 +6,7 @@
     app:startDestination="@id/galleryFragment">
     <fragment
         android:id="@+id/galleryFragment"
-        android:name="com.codinginflow.imagesearch.GalleryFragment"
+        android:name="com.codinginflow.imagesearch2.GalleryFragment"
         android:label="fragment_gallery"
         tools:layout="@layout/fragment_gallery" >
         <action
@@ -15,11 +15,11 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.codinginflow.imagesearch.DetailFragment"
+        android:name="com.codinginflow.imagesearch2.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="photo"
-            app:argType="com.codinginflow.imagesearch.UnsplashData$Result" />
+            app:argType="com.codinginflow.imagesearch2.UnsplashData$Result" />
     </fragment>
 </navigation>

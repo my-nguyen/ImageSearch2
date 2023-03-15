@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import android.os.Bundle
 import android.view.Menu
@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
-import com.codinginflow.imagesearch.databinding.FragmentGalleryBinding
+import com.codinginflow.imagesearch2.databinding.FragmentGalleryBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

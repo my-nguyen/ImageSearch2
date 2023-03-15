@@ -1,4 +1,4 @@
-package com.codinginflow.imagesearch
+package com.codinginflow.imagesearch2
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
